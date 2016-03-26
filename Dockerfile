@@ -4,8 +4,9 @@ LABEL version="0.9.0-SNAPSHOT"
 ENV brooklyn_version 0.9.0-SNAPSHOT
 ENV repository snapshots
 RUN apk upgrade --update ; \
-    apk add bash openssl curl; \
-	  rm -rf /var/lib/apt/lists/*
+    apk add bash openssl curl ; \
+	rm -rf /var/lib/apt/lists/* ; \
+	rm -rf /var/cache/apk/* ;
 RUN curl -s -L "https://repository.apache.org/service/local/artifact/maven/redirect?r=${repository}&g=org.apache.brooklyn&a=apache-brooklyn&v=${brooklyn_version}&p=tar.gz" -o apache-brooklyn.tar.gz ; \
     tar zxf apache-brooklyn.tar.gz ; \
     rm -f apache-brooklyn.tar.gz ; \
