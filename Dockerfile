@@ -13,5 +13,5 @@ RUN curl -s -L "https://repository.apache.org/service/local/artifact/maven/redir
     mv /apache-brooklyn-${brooklyn_version} /apache-brooklyn ;
 WORKDIR /apache-brooklyn
 VOLUME [ "/root/.brooklyn", "/root/.ssh" ]
-EXPOSE 8181 8101
+EXPOSE 8081 8101
 ENTRYPOINT [ "./bin/karaf"]
